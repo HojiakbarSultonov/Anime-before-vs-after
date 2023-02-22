@@ -1,0 +1,72 @@
+body{
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader{
+    width: 300px;
+    height: 300px;
+    background-color:black;
+    border-radius: 50%;
+    position: relative;
+    margin-top: 200px;
+    animation: loader 2s linear infinite;
+}
+
+@keyframes loader{
+    100%{
+        transform: rotate(360deg);
+    }
+} 
+.loader::after{
+    content: '';
+    width: 30px;
+    height: 30px;
+    background-color:rgb(0, 234, 255);
+    position: absolute;
+    border-radius: 50%;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    box-shadow: 0 0 10px rgb(0, 234, 255),
+     0 0 20px rgb(0, 234, 255),
+     0 0 30px rgb(0, 234, 255),
+     0 0 40px rgb(0, 234, 255),
+     0 0 50px rgb(0, 234, 255),
+     0 0 60px rgb(0, 234, 255),
+     0 0 70px rgb(0, 234, 255),
+     0 0 80px rgb(0, 234, 255),
+     0 0 90px rgb(0, 234, 255);
+     animation: newAnime 5s linear infinite;
+}
+
+.loader::before{
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to top, transparent, rgba(0, 234, 255, 0.719));
+    background-size: 150px 250px;
+    background-repeat: no-repeat;
+    border-top-left-radius: 150px;
+    border-bottom-left-radius: 150px;
+    animation: newAnime 5s linear infinite;
+}
+@keyframes newAnime{
+    100%{
+        filter:hue-rotate(360deg)
+    }
+}
+
+.circle{
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    background-color: black;
+    border-radius: 50%;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+}
